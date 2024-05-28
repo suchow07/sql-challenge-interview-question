@@ -44,12 +44,25 @@ INSERT INTO CustomerTransaction (transaction_id, visit_id, amount) VALUES
 -- transactions and the number of times they made these types of visits.
 -- Return the result table sorted in any order.
 
+-- # METHOD 1 USING LEFT JOIN
 
-SELECT DISTINCT v.customer_id,
-COUNT(v.customer_id) AS count_no_trans
+SELECT 
+	v.customer_id,
+	COUNT(v.customer_id) AS count_no_trans
 FROM Visits v
-LEFT JOIN CustomerTransaction ct
+LEFT JOIN 
+	CustomerTransaction ct
 ON v.visit_id = ct.visit_id
 WHERE ct.transaction_id IS NULL
 GROUP BY v.customer_id;
+
+
+-- # METHOD 2 USING SUBQUERY
+SELECT customer_id,
+		COUNT(*) AS count_no_trans
+FROM Visits
+WHERE visit_id NOT IN 
+          ( SELECT visit_id FROM CustomerTransaction
+			)
+GROUP BY customer_id;
 
