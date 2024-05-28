@@ -58,6 +58,7 @@ GROUP BY v.customer_id;
 
 
 -- # METHOD 2 USING SUBQUERY
+
 SELECT customer_id,
 		COUNT(*) AS count_no_trans
 FROM Visits
