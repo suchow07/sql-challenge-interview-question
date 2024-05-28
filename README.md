@@ -1,1 +1,1 @@
-# sql-challenge-data-lemur
+# sql-challenge-interview-questions
