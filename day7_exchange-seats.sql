@@ -1,4 +1,4 @@
--- DAY 6 --
+-- DAY 7 --
 -- CHALLENGE INSPIRATION FROM: https://leetcode.com/problems/exchange-seats/description
 -- TASK --
 -- Write a solution to swap the seat id of every two consecutive students.
