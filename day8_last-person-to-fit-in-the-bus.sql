@@ -32,7 +32,7 @@ VALUES
 
 
 -- Solution using Subquery
--- ===============
+-- =======================
 
 SELECT person_name
 FROM (
@@ -45,6 +45,7 @@ ORDER BY turn DESC
 LIMIT 1;
 
 -- Solution using Common Table Expression
+-- ========================================
 
 WITH cte AS(
 SELECT person_id, 
